@@ -1,0 +1,253 @@
+//Comment for compiler
+@import '../../_ntnx/variables';
+@import '../../_ntnx/mixins';
+
+html{
+  @include font;
+  background-color: -color-3;
+}
+
+body{
+  @include size(100vh, 100%);
+  @include flex(center, center, column);
+  background: url('../img/bg-criss-cross.svg');
+  background-size: cover;
+  overflow: hidden;
+}
+
+h1{font:$h1}
+h2{font:$h2}
+h3{font:$h3}
+h4{font:$h4}
+p {font:$p }
+
+.primary   { @include primary   }
+.secondary { @include secondary }
+.previous  { @include transition(opacity)}
+
+label{
+  font:$h4;
+  color:$font-color-2;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+input:not([type=checkbox],[type=radio]){
+  appearance: none;
+  border: 1px solid $border-color-1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  font: $p;
+  width: 100%;
+
+  &:focus{
+    outline: none;
+    border-color:$blue-1;
+  }
+
+  &::placeholder{ color:$font-color-3;}
+}
+
+container{
+  @include size(auto, 500px);
+  @include shadow;
+  @include transition(height);
+  border-radius: 4px;
+}
+
+
+//** header //
+
+header{
+  font-weight: 500;
+  @include size(auto, 100%);
+  @include flex(center, space-between, row);
+  padding: 20px;
+  background-color: white;
+  border-radius: 4px 4px 0 0;
+  border-bottom: 1px solid $border-color-3;
+  & > *{ margin-right: 30px;}
+
+  .badge{
+    @include size(20px, 20px);
+    @include flex(center, center, row);
+    display: inline-flex;
+    margin-right: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: white;
+    border-radius:4pc;
+    border:1px solid transparent;
+    transition: background-color 0.2s $animation, color 0.3s $animation, border-color 0.3s $animation;
+  }
+
+  .active .badge{
+    color:white;
+    background-color: $blue-1;
+  }
+
+  .inactive .badge{
+    color:$font-color-2;
+    border-color:$border-color-2;
+  }
+
+  .completed .badge{
+    color:$blue-1;
+    border: 1px solid $blue-3;
+  }
+
+  .completed {
+    &:hover{
+      color:$blue-1;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+
+  .inactive, .completed { color:$font-color-2;}
+}
+
+.container-body{
+  background-color:white;
+  padding: 20px;
+  & > * { margin-bottom: 20px; }
+}
+.separator{
+  @include size(1px, 100%);
+  background-color: $border-color-3;
+  margin: 30px 0;
+}
+
+
+//body
+
+.col1{
+  @include flex(center, stretch, row);
+}
+
+.col2{
+  @include flex(center, space-between, row);
+  width: 100%;
+  .full-input:first-child { margin-right: 10px; }
+  .full-input:last-child  { margin-left:  10px; }
+}
+
+.col-alt{
+  @include flex(center, flex-start, row);
+  input{margin-right: 10px;}
+}
+
+.full-input{
+  @include flex(flex-start, flex-start, column);
+  width: 100%;
+}
+
+.notThat{
+  opacity: 0;
+  height:  0;
+  margin:  0;
+  overflow: hidden;
+  transition: height 0.3s $animation, opacity 0.3s $animation 0.1s;
+
+  & > * {
+    margin-top:   20px;
+    margin-bottom: 0px;
+  }
+}
+
+.animate-appear{
+  height: 200px;
+  opacity: 1;
+}
+
+footer{
+  @include size(auto, 100%);
+  @include flex(center, space-between, row);
+  padding: 20px;
+  background-color: white;
+  border-top: 1px solid $border-color-3;
+  border-radius: 0 0 4px 4px;
+}
+
+header, .container-body, footer{
+  padding: 20px 30px;
+}
+
+span{
+  font-weight: 500;
+}
+
+.underlay{
+  @include size(100vh,100%);
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.agreement{
+  @include size(300px, 440px);
+  white-space: pre-line;
+  text-align: left;
+  position: relative;
+  padding: 10px 30px;
+  background: white;
+  border-bottom: 0px;
+  border: 1px solid $border-color-3;
+  border-radius: 4px 4px 0 0;
+  overflow: scroll;
+}
+
+/* ==========================================================================
+Confetti
+========================================================================== */
+
+
+@keyframes confetti-slow {
+  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
+
+  100% { transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg); }
+}
+
+@keyframes confetti-medium {
+  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
+
+  100% { transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg); }
+}
+
+@keyframes confetti-fast {
+  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
+
+  100% { transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg); }
+}
+
+
+.confetti-container {
+  perspective: 700px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  z-index: 1;
+  top: -10px;
+  border-radius: 0%;
+  pointer-events: none;
+
+  &--animation-slow {
+    animation: confetti-slow 3.25s linear 1 forwards;
+  }
+
+  &--animation-medium {
+    animation: confetti-medium 2.75s linear 1 forwards;
+  }
+
+  &--animation-fast {
+    animation: confetti-fast 2.25s linear 1 forwards;
+  }
+}
