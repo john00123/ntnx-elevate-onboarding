@@ -12,7 +12,9 @@ function secondClick(){
   $('.next').text('Accept & Submit');
   $('.step-two').removeClass('active').addClass('completed');
   $('.step-three').removeClass('inactive').addClass('active');
-  $('.previous').off('click').on('click', previousThird);
+  $('.previous, .step-two').off('click').on('click', previousThird);
+  $('.step-one').off('click').on('click', ()=>{ previousThird();
+    previousSecond()});
   $('.container-body').html(terms);
   $('container').addClass('overlay');
   $('body').append(`<div class='underlay js-container'>&nbsp;</div>`);
@@ -34,8 +36,9 @@ function previousThird(){
   $('.next').text('Next');
   $('.step-two').removeClass('completed').addClass('active');
   $('.step-three').removeClass('active').addClass('inactive');
-  $('.previous').off('click').on('click', previousSecond);
+  $('.previous, .step-two').off('click').on('click', previousSecond);
   $('.container-body').html(company);
+
 }
 
 
@@ -44,5 +47,5 @@ $(document).ready(function() {
   $('.notMe').change(()=>{ $('.notThat').toggleClass('animate-appear');});
   $('.next').on('click', firstClick);
   $('.previous').css('opacity','0');
-  $('.previous').on('click', previousSecond);
+  $('.previous, .step-one').on('click', previousSecond);
 });
