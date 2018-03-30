@@ -136,6 +136,7 @@ container {
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
   transition: height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border-radius: 4px;
+  max-height: 600px;
 }
 
 header {
@@ -203,6 +204,8 @@ header .inactive, header .completed {
 .container-body {
   background-color: white;
   padding: 20px;
+  max-height: 380px;
+  overflow: scroll;
 }
 
 .container-body > * {
@@ -309,7 +312,7 @@ span {
 }
 
 .agreement {
-  height: 300px;
+  height: 250px;
   width: 440px;
   box-sizing: border-box;
   white-space: pre-line;

@@ -53,6 +53,7 @@ container{
   @include shadow;
   @include transition(height);
   border-radius: 4px;
+  max-height: 600px;
 }
 
 
@@ -110,6 +111,8 @@ header{
 .container-body{
   background-color:white;
   padding: 20px;
+  max-height: 380px;
+  overflow: scroll;
   & > * { margin-bottom: 20px; }
 }
 .separator{
@@ -185,7 +188,7 @@ span{
 }
 
 .agreement{
-  @include size(300px, 440px);
+  @include size(250px, 440px);
   white-space: pre-line;
   text-align: left;
   position: relative;
