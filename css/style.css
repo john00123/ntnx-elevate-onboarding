@@ -4,20 +4,22 @@ html {
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
-  background-color: -color-3;
+  background-color: #F2F4F6;
+  background-repeat: repeat-y;
 }
 
 body {
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
+  box-sizing: content-box;
+  padding: 80px 30px 30px 30px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
-  background: url("../img/bg-criss-cross.svg");
   background-size: cover;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -120,45 +122,58 @@ input:not([type=checkbox], [type=radio]) {
   width: 100%;
 }
 
-input:not([type=checkbox], [type=radio]):focus {
+input:focus {
   outline: none;
   border-color: #22A5F7;
 }
 
-input:not([type=checkbox], [type=radio])::placeholder {
+input::placeholder {
   color: #7C8D9F;
 }
 
 container {
   height: auto;
-  width: 500px;
+  width: 700px;
   box-sizing: border-box;
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
   transition: height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
   border-radius: 4px;
-  max-height: 600px;
 }
 
-header {
-  font-weight: 500;
-  height: auto;
+nav {
+  position: fixed;
+  top: 0;
+  margin: 0 -40px;
+  padding: 8px 20px;
+  height: 50px;
   width: 100%;
   box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  padding: 20px;
+  overflow: hidden;
   background-color: white;
-  border-radius: 4px 4px 0 0;
-  border-bottom: 1px solid #F2F4F6;
 }
 
-header > * {
-  margin-right: 30px;
+.container-block header {
+  font-weight: 500;
+  height: auto;
+  width: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  flex-shrink: 0;
+  background-color: white;
+  border-radius: 4px 0 0 0;
+  border-right: 1px solid #F2F4F6;
 }
 
-header .badge {
+.container-block header > * {
+  margin-right: 20px;
+  margin-top: 15px;
+}
+
+.container-block header .badge {
   height: 20px;
   width: 20px;
   box-sizing: border-box;
@@ -176,36 +191,45 @@ header .badge {
   transition: background-color 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-header .active .badge {
+.container-block header .active .badge {
   color: white;
   background-color: #22A5F7;
 }
 
-header .inactive .badge {
+.container-block header .inactive .badge {
   color: #627386;
   border-color: #D5DAE0;
 }
 
-header .completed .badge {
+.container-block header .completed .badge {
   color: #22A5F7;
   border: 1px solid #91d2fb;
 }
 
-header .completed:hover {
+.container-block header .completed:hover {
   color: #22A5F7;
   cursor: pointer;
   text-decoration: none;
 }
 
-header .inactive, header .completed {
+.container-block header .inactive, .container-block header .completed {
   color: #627386;
+}
+
+.container-block {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  justify-content: stretch;
+  flex-direction: row;
 }
 
 .container-body {
   background-color: white;
   padding: 20px;
-  max-height: 380px;
-  overflow: scroll;
+  flex-grow: 1;
 }
 
 .container-body > * {
@@ -307,6 +331,8 @@ span {
   width: 100%;
   box-sizing: border-box;
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 0;
   pointer-events: none;
 }
