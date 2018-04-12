@@ -6,6 +6,7 @@ function firstClick(){
   $('.next').off('click').on('click', secondClick);
   $('.previous').css('opacity','1');
   $('.container-body').html(company);
+  $("html, body").animate({ scrollTop: 0 }, "slow");
 }
 
 function secondClick(){
@@ -17,6 +18,7 @@ function secondClick(){
     previousSecond()});
   $('.container-body').html(terms);
   $('container').addClass('overlay');
+  $("html, body").animate({ scrollTop: 0 }, "slow");
   $('body').append(`<div class='underlay js-container'>&nbsp;</div>`);
   confetti();
   setTimeout(function() {
@@ -30,6 +32,7 @@ function previousSecond(){
   $('.previous').css('opacity','0');
   $('.next').off('click').on('click', firstClick);
   $('.container-body').html(main);
+  $("html, body").animate({ scrollTop: 0 }, "slow");
 }
 
 function previousThird(){
@@ -38,7 +41,7 @@ function previousThird(){
   $('.step-three').removeClass('active').addClass('inactive');
   $('.previous, .step-two').off('click').on('click', previousSecond);
   $('.container-body').html(company);
-
+  $("html, body").animate({ scrollTop: 0 }, "slow");
 }
 
 
