@@ -4,7 +4,7 @@ html {
   text-rendering: optimizeLegibility;
   text-rendering: geometricPrecision;
   -webkit-font-smoothing: antialiased;
-  background-color: #F2F4F6;
+  background-color: white;
   background-repeat: repeat-y;
 }
 
@@ -13,7 +13,7 @@ body {
   width: 100%;
   box-sizing: border-box;
   box-sizing: content-box;
-  padding: 80px 30px 30px 30px;
+  padding: 50px 30px 30px 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -132,12 +132,10 @@ input::placeholder {
 }
 
 container {
-  height: auto;
-  width: 700px;
+  height: 100vh;
+  width: 800px;
   box-sizing: border-box;
-  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
   transition: height 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border-radius: 4px;
 }
 
 nav {
@@ -149,12 +147,14 @@ nav {
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
-  background-color: white;
+  background-color: #F2F4F6;
+  border-bottom: 1px solid #F2F4F6;
 }
 
 .container-block header {
   font-weight: 500;
-  height: auto;
+  background-color: #F2F4F6;
+  height: 100vh;
   width: auto;
   box-sizing: border-box;
   display: flex;
@@ -162,8 +162,10 @@ nav {
   justify-content: flex-start;
   flex-direction: column;
   padding: 20px;
+  position: fixed;
+  top: 50px;
+  left: 0;
   flex-shrink: 0;
-  background-color: white;
   border-radius: 4px 0 0 0;
   border-right: 1px solid #F2F4F6;
 }
@@ -220,6 +222,7 @@ nav {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  overflow-x: hidden;
   display: flex;
   align-items: stretch;
   justify-content: stretch;
@@ -305,6 +308,9 @@ nav {
 }
 
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   height: auto;
   width: 100%;
   box-sizing: border-box;
@@ -313,9 +319,8 @@ footer {
   justify-content: space-between;
   flex-direction: row;
   padding: 20px;
-  background-color: white;
+  background-color: #F2F4F6;
   border-top: 1px solid #F2F4F6;
-  border-radius: 0 0 4px 4px;
 }
 
 header, .container-body, footer {

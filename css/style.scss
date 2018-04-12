@@ -4,15 +4,17 @@
 
 html{
   @include font;
-  background-color: $background-color-3;
+  background-color: white;
   // background: url('../img/bg-criss-cross.svg');
   background-repeat: repeat-y;
 }
 
+
+
 body{
   @include size(100vh, 100%);
   box-sizing: content-box;
-  padding: 80px 30px 30px 30px;
+  padding: 50px 30px 30px 30px;
   @include flex(center, flex-start, column);
   background-size: cover;
   overflow-x: hidden;
@@ -52,10 +54,8 @@ input:not([type=checkbox],[type=radio]){
 }
 
 container{
-  @include size(auto, 700px);
-  @include shadow;
+  @include size(100vh, 800px);
   @include transition(height);
-  border-radius: 4px;
 }
 
 
@@ -67,16 +67,21 @@ nav{
   padding: 8px 20px;
   @include size(50px, 100%);
   overflow: hidden;
-  background-color: rgba(255,255,255,1);
+  background-color: $background-color-3;
+  border-bottom: 1px solid $background-color-3;
 }
 
 .container-block header{
   font-weight: 500;
-  @include size(auto, auto);
+   background-color: $border-color-3;
+   @include size(100vh, auto);
   @include flex(flex-start, flex-start, column);
   padding: 20px;
+  position: fixed;
+  top:50px;
+  left: 0;
+
   flex-shrink: 0;
-  background-color: white;
   border-radius: 4px 0 0 0;
   border-right: 1px solid $border-color-3;
   & > *{
@@ -128,6 +133,7 @@ nav{
 
 .container-block{
   @include size(100%, 100%);
+  overflow-x: hidden;
   @include flex(stretch, stretch, row);
 }
 
@@ -186,12 +192,14 @@ nav{
 }
 
 footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
   @include size(auto, 100%);
   @include flex(center, space-between, row);
   padding: 20px;
-  background-color: white;
+  background-color: $border-color-3;
   border-top: 1px solid $border-color-3;
-  border-radius: 0 0 4px 4px;
 }
 
 header, .container-body, footer{
