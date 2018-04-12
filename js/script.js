@@ -1,5 +1,4 @@
 
-
 function firstClick(){
   $('.step-one').removeClass('active').addClass('completed');
   $('.step-two').removeClass('inactive').addClass('active');
