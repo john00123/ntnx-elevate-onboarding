@@ -13,13 +13,13 @@ body {
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
-  padding: 80px 0 80px 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
   background-size: cover;
   overflow-x: hidden;
+  padding: 40px 0;
 }
 
 h1 {
@@ -105,6 +105,14 @@ p {
   transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+header, .container-body, footer {
+  padding: 20px 30px;
+}
+
+span {
+  font-weight: 500;
+}
+
 label {
   font: 400 12px/8px "nutanix_soft", san-serif;
   color: #627386;
@@ -118,8 +126,8 @@ input:not([type=checkbox], [type=radio]) {
   border-radius: 4px;
   padding: 4px 8px;
   box-sizing: border-box;
-  font: 400 14px/22px "nutanix_soft", san-serif;
   width: 100%;
+  font: 400 14px/22px "nutanix_soft", san-serif;
 }
 
 input:focus {
@@ -318,14 +326,6 @@ footer {
   border-radius: 0 0 4px 4px;
 }
 
-header, .container-body, footer {
-  padding: 20px 30px;
-}
-
-span {
-  font-weight: 500;
-}
-
 .underlay {
   height: 100vh;
   width: 100%;
@@ -342,14 +342,14 @@ span {
   width: 440px;
   box-sizing: border-box;
   white-space: pre-line;
-  text-align: left;
-  position: relative;
   padding: 10px 30px;
-  background: white;
-  border-bottom: 0px;
-  border: 1px solid #F2F4F6;
+  background-color: #F2F4F6;
   border-radius: 4px 4px 0 0;
   overflow: scroll;
+}
+
+.agreement p {
+  margin-top: 0;
 }
 
 /* ==========================================================================
@@ -397,7 +397,7 @@ Confetti
   position: absolute;
   z-index: 1;
   top: -10px;
-  border-radius: 0%;
+  border-radius: 0;
   pointer-events: none;
 }
 

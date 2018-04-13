@@ -5,18 +5,17 @@
 html{
   @include font;
   background-color: $background-color-3;
-  // background: url('../img/bg-criss-cross.svg');
   background-repeat: repeat-y;
   overflow-x: hidden;
+  // background: url('../img/bg-criss-cross.svg');
 }
 
 body{
   @include size(100vh, 100%);
-
-  padding: 80px 0 80px 0;
   @include flex(center, flex-start, column);
   background-size: cover;
   overflow-x: hidden;
+  padding: 40px 0;
 }
 
 h1{font:$h1}
@@ -28,6 +27,9 @@ p {font:$p }
 .primary   { @include primary   }
 .secondary { @include secondary }
 .previous  { @include transition(opacity)}
+
+header, .container-body, footer {padding: 20px 30px}
+span{font-weight: 500}
 
 label{
   font:$h4;
@@ -41,8 +43,8 @@ input:not([type=checkbox],[type=radio]){
   border-radius: 4px;
   padding: 4px 8px;
   box-sizing: border-box;
-  font: $p;
   width: 100%;
+  font: $p;
 
   &:focus{
     outline: none;
@@ -61,6 +63,7 @@ container{
 
 
 //** header //
+
 nav{
   position: fixed;
   top: 0;
@@ -138,6 +141,7 @@ nav{
   flex-grow: 1;
   & > * { margin-bottom: 20px; }
 }
+
 .separator{
   @include size(1px, 100%);
   background-color: $border-color-3;
@@ -195,13 +199,6 @@ footer{
   border-radius: 0 0 4px 4px;
 }
 
-header, .container-body, footer{
-  padding: 20px 30px;
-}
-
-span{
-  font-weight: 500;
-}
 
 .underlay{
   @include size(100vh,100%);
@@ -215,14 +212,11 @@ span{
 .agreement{
   @include size(250px, 440px);
   white-space: pre-line;
-  text-align: left;
-  position: relative;
   padding: 10px 30px;
-  background: white;
-  border-bottom: 0px;
-  border: 1px solid $border-color-3;
+  background-color: $background-color-3;
   border-radius: 4px 4px 0 0;
   overflow: scroll;
+  p {margin-top: 0 }
 }
 
 /* ==========================================================================
@@ -231,23 +225,19 @@ Confetti
 
 
 @keyframes confetti-slow {
-  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
-
-  100% { transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg); }
+  0%   { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0)}
+  100% { transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg)}
 }
 
 @keyframes confetti-medium {
-  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
-
-  100% { transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg); }
+  0%   { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0)}
+  100% { transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg)}
 }
 
 @keyframes confetti-fast {
-  0% { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0); }
-
-  100% { transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg); }
+  0%   { transform: translate3d(0, 0, 0) rotateX(0) rotateY(0)}
+  100% { transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg)}
 }
-
 
 .confetti-container {
   perspective: 700px;
@@ -264,18 +254,10 @@ Confetti
   position: absolute;
   z-index: 1;
   top: -10px;
-  border-radius: 0%;
+  border-radius: 0;
   pointer-events: none;
 
-  &--animation-slow {
-    animation: confetti-slow 3.25s linear 1 forwards;
-  }
-
-  &--animation-medium {
-    animation: confetti-medium 2.75s linear 1 forwards;
-  }
-
-  &--animation-fast {
-    animation: confetti-fast 2.25s linear 1 forwards;
-  }
+  &--animation-slow   {animation: confetti-slow 3.25s linear 1 forwards}
+  &--animation-medium {animation: confetti-medium 2.75s linear 1 forwards}
+  &--animation-fast   {animation: confetti-fast 2.25s linear 1 forwards}
 }
