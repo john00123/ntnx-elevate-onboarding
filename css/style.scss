@@ -12,7 +12,7 @@ html{
 
 body{
   @include size(100vh, 100%);
-  @include flex(center, flex-start, column);
+  @include flex(center, center, column);
   background-size: cover;
   overflow-x: hidden;
   padding: 40px 0;
@@ -37,8 +37,21 @@ label{
   font-weight: 500;
   margin-bottom: 10px;
 }
+
+input[type=text]{
+  appearance: none;
+  -webkit-appearance:none;
+  border: 1px solid $border-color-1;
+  border-radius: 4px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  width: 100%;
+  font: $p;
+}
+
 input:not([type=checkbox],[type=radio]){
   appearance: none;
+  -webkit-appearance:none;
   border: 1px solid $border-color-1;
   border-radius: 4px;
   padding: 4px 8px;
@@ -210,7 +223,7 @@ footer{
 }
 
 .agreement{
-  @include size(250px, 440px);
+  @include size(315px, 100%);
   white-space: pre-line;
   padding: 10px 30px;
   background-color: $background-color-3;

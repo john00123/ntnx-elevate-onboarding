@@ -1,7 +1,7 @@
 const main=`
   <h2> Elevate Partner Application</h2>
   <h3 id='intro' style='margin-bottom:30px; margin-top: -10px;line-height:1.5; font-weight:400;'>
-    Thank you for your interest in our elevate partner program! </br>Let's start with personal and contact information.
+    Thank you for your interest in our elevate partner program! </br>Let's start with some contact and company information.
   </h3>
 
   <div class='col2'>
@@ -84,22 +84,24 @@ const main=`
 const company =`
   <h2> Elevate Partner Application</h2>
   <h3 id='intro' style='margin-bottom:30px; margin-top: -10px;line-height:1.5; font-weight:400;'>
-    Thank you for your interest in our elevate partner program! </br>Tell us about your company.
+    Thank you for your interest in our elevate partner program! </br>Tell us more about your goals.
   </h3>
-    
+
 
       <p>How would you descibe the type of engagement your company is looking for with Nutanix.</p>
 
-      <div class='col2'>
-        <div class='col-alt' style='margin-bottom:0'>
-          <input type='checkbox' class='notMe animate-opacity'/>
-          <h3> Validate software for AHV</h3>
+      <div style='margin-bottom:0;'>
+        <div class='col2'>
+          <div class='col-alt' style='margin-bottom:0'>
+            <input type='checkbox' class='notMe animate-opacity'/>
+            <h3> Validate software for AHV</h3>
+          </div>
+          <div class='col-alt' style='margin-bottom:0;  width:48%'>
+            <input type='checkbox' class='notMe animate-opacity'/>
+            <h3> App integration with API</h3>
+          </div>
         </div>
-        <div class='col-alt' style='margin-bottom:0;  width:48%'>
-          <input type='checkbox' class='notMe animate-opacity'/>
-          <h3> App integration with API</h3>
-        </div>
-      </div>
+      <div>
 
       <div class='col2'>
         <div class='col-alt' style='margin-bottom:0'>
@@ -147,8 +149,11 @@ const terms =
     </h3>
 
     <div class="agreement">
-    <p>This Nutanix Elevate Program Agreement (the “Agreement”) creates a contract between you (“Partner”) and Nutanix, Inc., having its principal place of business at 1740 Technology Dr., Suite 150, San Jose, CA 95110 (“Nutanix”), (“Partner” and each of Partner and Nutanix a “Party” and collectively, the “Parties”). To confirm your understanding and acceptance of the Agreement, click “Agree.” By clicking “Agree”, Partner will be a part of the Nutanix Elevate Program at the Build Elevate Partner level. The Agreement is effective as of the date Partner clicks “Agree” (the “Effective Date”).
+    <p>This Nutanix Elevate Program Agreement (the “Agreement”) creates a contract between you (“Partner”) and Nutanix, Inc., having its principal place of business at 1740 Technology Dr., Suite 150, San Jose, CA 95110 (“Nutanix”), (“Partner” and each of Partner and Nutanix a “Party” and collectively, the “Parties”).
+
+      To confirm your understanding and acceptance of the Agreement, click “Agree.” By clicking “Agree”, Partner will be a part of the Nutanix Elevate Program at the Build Elevate Partner level. The Agreement is effective as of the date Partner clicks “Agree” (the “Effective Date”).
       This Agreement governs the relationship of the Parties with regard to the Nutanix Elevate Program.
+      
       In consideration of the mutual promises contained herein, the Parties hereby agree as follows:
 
       <b>1. Definitions.</b>

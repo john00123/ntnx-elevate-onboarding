@@ -9,7 +9,7 @@ function firstClick(){
 }
 
 function secondClick(){
-  $('.next').text('Accept & Submit');
+  $('.next').text('Agree & Submit');
   $('.step-two').removeClass('active').addClass('completed');
   $('.step-three').removeClass('inactive').addClass('active');
   $('.previous, .step-two').off('click').on('click', previousThird);

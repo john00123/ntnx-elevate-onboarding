@@ -15,7 +15,7 @@ body {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-direction: column;
   background-size: cover;
   overflow-x: hidden;
@@ -120,8 +120,20 @@ label {
   margin-bottom: 10px;
 }
 
+input[type=text] {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #B8BFCA;
+  border-radius: 4px;
+  padding: 4px 8px;
+  box-sizing: border-box;
+  width: 100%;
+  font: 400 14px/22px "nutanix_soft", san-serif;
+}
+
 input:not([type=checkbox], [type=radio]) {
   appearance: none;
+  -webkit-appearance: none;
   border: 1px solid #B8BFCA;
   border-radius: 4px;
   padding: 4px 8px;
@@ -338,8 +350,8 @@ footer {
 }
 
 .agreement {
-  height: 250px;
-  width: 440px;
+  height: 315px;
+  width: 100%;
   box-sizing: border-box;
   white-space: pre-line;
   padding: 10px 30px;
