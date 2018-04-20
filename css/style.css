@@ -250,6 +250,7 @@ nav {
   background-color: white;
   padding: 20px;
   flex-grow: 1;
+  border-top-right-radius: 4px;
 }
 
 .container-body > * {

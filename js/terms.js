@@ -120,22 +120,22 @@ const company =`
 
       <div class='col2'>
         <div class='col-alt' style='margin-bottom:0'>
-          <input type='radio' class='notMe animate-opacity'/>
+          <input type='radio'  name="contact" class='notMe animate-opacity'/>
           <h3> learning about Nutanix</h3>
         </div>
         <div class='col-alt' style='margin-bottom:0;  width:48%'>
-          <input type='radio' class='notMe animate-opacity'/>
+          <input type='radio'  name="contact" class='notMe animate-opacity'/>
           <h3> purchasing Nutanix</h3>
         </div>
       </div>
 
       <div class='col2'>
         <div class='col-alt' style='margin-bottom:0'>
-          <input type='radio' class='notMe animate-opacity'/>
+          <input type='radio'  name="contact"  class='notMe animate-opacity'/>
           <h3>have Nutanix but want to scale</h3>
         </div>
         <div class='col-alt' style='margin-bottom:0; width:48%'>
-          <input type='radio' class='notMe animate-opacity'/>
+          <input type='radio'  name="contact"  class='notMe animate-opacity'/>
           <h3>other</h3>
         </div>
       </div>
@@ -153,7 +153,7 @@ const terms =
 
       To confirm your understanding and acceptance of the Agreement, click “Agree.” By clicking “Agree”, Partner will be a part of the Nutanix Elevate Program at the Build Elevate Partner level. The Agreement is effective as of the date Partner clicks “Agree” (the “Effective Date”).
       This Agreement governs the relationship of the Parties with regard to the Nutanix Elevate Program.
-      
+
       In consideration of the mutual promises contained herein, the Parties hereby agree as follows:
 
       <b>1. Definitions.</b>
@@ -271,3 +271,6 @@ const terms =
     </p>
 
     </div>`
+const confirm = `
+  <h1> Final Step </h1>
+`

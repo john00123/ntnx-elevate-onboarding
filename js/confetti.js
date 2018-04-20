@@ -1,4 +1,8 @@
 function confetti(){
+  $('container').addClass('overlay');
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  $('body').append(`<div class='underlay js-container'>&nbsp;</div>`);
+  
   var Confettiful = function Confettiful(el) {
     this.el = el;
     this.containerEl = null;

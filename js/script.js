@@ -1,53 +1,61 @@
 
-function firstClick(){
-  $('.step-one').removeClass('active').addClass('completed');
-  $('.step-two').removeClass('inactive').addClass('active');
-  $('.next').off('click').on('click', secondClick);
-  $('.previous').css('opacity','1');
-  $('.container-body').html(company);
-  $("html, body").animate({ scrollTop: 0 }, "slow");
+//variables and initial deployment
+const content = [main, company, terms, confirm];
+let pg = 0;
+display(pg);
+
+//steps
+function step(pg){
+  $(`.step:eq(${pg})`).removeClass().addClass('step active');
+  $(`.step:eq(${pg - 1 })`).removeClass().addClass('step completed');
+  $(`.step:eq(${pg + 1 }), .step:eq(${pg + 2 })`).removeClass().addClass('step inactive');
+
 }
 
-function secondClick(){
-  $('.next').text('Agree & Submit');
-  $('.step-two').removeClass('active').addClass('completed');
-  $('.step-three').removeClass('inactive').addClass('active');
-  $('.previous, .step-two').off('click').on('click', previousThird);
-  $('.step-one').off('click').on('click', ()=>{ previousThird();
-    previousSecond()});
-  $('.container-body').html(terms);
-  $('container').addClass('overlay');
+//display function
+function display(pg){
+  $('.container-body').html(content[pg]);
+
+  //takes you back to the top of the form
   $("html, body").animate({ scrollTop: 0 }, "slow");
-  $('body').append(`<div class='underlay js-container'>&nbsp;</div>`);
-  confetti();
-  setTimeout(function() {
-    $('.underlay').fadeOut('slow', ()=>{$('.underlay').remove()});
-  }, 5000);
+
+  //show/hide previous button
+  pg >= 1 ?
+  $('.previous').css('opacity','1').css('pointer-events','all'):
+  $('.previous').css('opacity','0').css('pointer-events','none');
+
+  //expand function
+  pg < 1 ?
+  $('.notMe').change(()=> $('.notThat').toggleClass('animate-appear'))
+  : null ;
+
+  // Change agreen text
+  pg === 2 ?
+  $('.next').text('Agree & Submit') : $('.next').text('Next');
+
+  //last step
+  if (pg === 3){
+    $('header, footer').hide();
+    $('.container-body').css('border-radius','4px');
+    //confetti
+    confetti();
+    setTimeout(function(){
+      $('.underlay').fadeOut('slow',() => $('.underlay').remove())
+    }, 5000);
+  }
+  else{
+    $('header, footer').show();
+    $('.container-body').css('border-radius' ,'');
+  }
 }
 
-function previousSecond(){
-  $('.step-one').removeClass('completed').addClass('active');
-  $('.step-two').removeClass('active').addClass('inactive');
-  $('.previous').css('opacity','0');
-  $('.next').off('click').on('click', firstClick);
-  $('.container-body').html(main);
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-}
 
-function previousThird(){
-  $('.next').text('Next');
-  $('.step-two').removeClass('completed').addClass('active');
-  $('.step-three').removeClass('active').addClass('inactive');
-  $('.previous, .step-two').off('click').on('click', previousSecond);
-  $('.container-body').html(company);
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-}
-
+//loads
 
 $(document).ready(function() {
-  $('.container-body').html(main);
-  $('.notMe').change(()=>{ $('.notThat').toggleClass('animate-appear');});
-  $('.next').on('click', firstClick);
-  $('.previous').css('opacity','0');
-  $('.previous, .step-one').on('click', previousSecond);
+  $('.next').click(()=> pg += 1);
+  $('.previous').click(()=> pg -= 1);
+  $('.next, .previous').click(() =>
+    { display(pg); step(pg);}
+  );
 });
