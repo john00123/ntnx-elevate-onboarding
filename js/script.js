@@ -30,11 +30,29 @@ function display(pg){
   : null ;
 
   // Change agreen text
-  pg === 2 ?
-  $('.next').text('Agree & Submit') : $('.next').text('Next');
+  if (pg === 2){
+    $('.next').text('Agreed & Submit');
+    $('.next').addClass('disabled');
+    $('#agreed').change(()=> {
+      if ($('#agreed').prop('checked')){
+        $('.next').removeClass('disabled')//blah blah
+      }
+    });
 
+    $('#scroller').click(()=>{
+      $('.agreement').stop()
+        .animate({scrollTop: $('.agreement')[0].scrollHeight
+      }, 800);
+    });
+  }
+  else{
+
+    $('.next').text('Next');
+    $('.next').removeClass('disabled');
+  }
   //last step
   if (pg === 3){
+    $('container').css('width','600px');
     $('header, footer').hide();
     $('.container-body').css('border-radius','4px');
     //confetti
@@ -42,6 +60,7 @@ function display(pg){
     setTimeout(function(){
       $('.underlay').fadeOut('slow',() => $('.underlay').remove())
     }, 5000);
+
   }
   else{
     $('header, footer').show();

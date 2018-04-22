@@ -11,7 +11,7 @@ html{
 }
 
 body{
-  @include size(100vh, 100%);
+  @include size(100%, 100%);
   @include flex(center, center, column);
   background-size: cover;
   overflow-x: hidden;
@@ -162,6 +162,21 @@ nav{
   margin: 30px 0;
 }
 
+.disabled{
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.video{
+  display: block;
+  @include size(300px, calc(100%+40px));
+  margin-left: -20px;
+  margin-right: -20px;
+  margin-bottom: 30px;
+  background-color: $light-blue-3;
+  box-sizing: content-box;
+}
+
 
 //body
 
@@ -174,6 +189,40 @@ nav{
   width: 100%;
   .full-input:first-child { margin-right: 10px; }
   .full-input:last-child  { margin-left:  10px; }
+}
+
+.module{
+  border-bottom: 1px solid $border-color-3;
+  &:last-child{border:none;}
+  &:hover {color:$blue-1}
+  &:hover {cursor: pointer;}
+
+}
+
+hr{
+  background-color: $border-color-3;
+  height: 1px;
+  border: none;
+}
+
+.agreement-separtor{  background-color: $border-color-2;}
+
+a, a:visited{
+  font:inherit;
+  color:inherit;
+  text-decoration: none;
+}
+
+.link{
+  @include link();
+}
+.agreement-footer{
+  box-sizing: content-box;
+  border-radius: 4px;
+  background-color: white;
+  margin-left: -10px;
+  margin-right: -10px;
+  padding: 0 20px;
 }
 
 .col-alt{
@@ -228,7 +277,7 @@ footer{
   white-space: pre-line;
   padding: 10px 30px;
   background-color: $background-color-3;
-  border-radius: 4px 4px 0 0;
+  border-radius: 4px;
   overflow: scroll;
   p {margin-top: 0 }
 }

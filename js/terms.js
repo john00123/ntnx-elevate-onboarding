@@ -149,6 +149,11 @@ const terms =
     </h3>
 
     <div class="agreement">
+    <div class='col2' style='padding-top: 20px' >
+      <h3 style='margin:0'> Elevate Program Agreement </h3>
+      <a class='link' id='scroller'>Scroll to bottom</a>
+    </div>
+    <hr class='agreement-separtor'>
     <p>This Nutanix Elevate Program Agreement (the “Agreement”) creates a contract between you (“Partner”) and Nutanix, Inc., having its principal place of business at 1740 Technology Dr., Suite 150, San Jose, CA 95110 (“Nutanix”), (“Partner” and each of Partner and Nutanix a “Party” and collectively, the “Parties”).
 
       To confirm your understanding and acceptance of the Agreement, click “Agree.” By clicking “Agree”, Partner will be a part of the Nutanix Elevate Program at the Build Elevate Partner level. The Agreement is effective as of the date Partner clicks “Agree” (the “Effective Date”).
@@ -269,8 +274,41 @@ const terms =
       <b>18. Miscellaneous. </b>
       This Agreement, including any exhibits attached hereto, constitutes the entire agreement between the Parties and supersedes all previous agreements, oral or written, with respect to the subject matter of this Agreement. This Agreement may not be amended without the prior written consent of both Parties. Neither Party may assign or delegate or otherwise transfer its licenses, rights or duties under this Agreement (other than in connection with a merger, change of control or a sale of all or substantially all of such Party’s assets), or any portion thereof, without the other Party’s prior written consent. Any permitted assignment of this Agreement shall be binding upon and enforceable by and against the Parties’ successors and assigns, provided that any unauthorized assignment shall be null and void and constitute a breach of this Agreement. This Agreement shall be governed by and interpreted in accordance with the laws of the state of California without giving effect to its conflicts of law rules, and the parties agree that jurisdiction for any claim or dispute arising from or related to this Agreement resides in the federal and state courts situated in Santa Clara County, California. This Agreement shall not be governed by the United Nations Convention on Contracts for the International Sale of Goods. A waiver by either Party of any term or condition of this Agreement or any breach thereof, in any one instance, shall not waive such term or condition or any subsequent breach thereof. If any provision of this Agreement is held invalid or unenforceable, it shall be replaced with the valid provision that most closely reflects the intent of the Parties and the remaining provisions of the Agreement will remain in full force and effect. This Agreement will not be construed more strictly against either Party as a result of its participation in its preparation. This Agreement may be executed in any number of counterparts, all of which taken together constitute a single instrument.
     </p>
-
-    </div>`
+    <div class='agreement-footer'>
+      <p style='margin-top:10px'>Company Name: Nutanix
+      Your Name: John Torres
+      Date: 4/22/2018</p><hr>
+      <p> <input type='checkbox' id='agreed'/> BY CHECKING THIS BOX YOU (A) REPRESENT THAT YOU HAVE THE LEGAL CAPACITY AND AUTHORITY TO BIND YOURSELF AND/OR THE PERSON OR ENTITY FOR WHOM YOU ARE ENTERING INTO THIS AGREEMENT; (B) REPRESENT THAT YOU HAVE READ AND UNDERSTAND THIS AGREEMENT; AND (C) AGREE TO BE BOUND BY THIS AGREEMENT.</p>
+    </div>
+  </div>`
 const confirm = `
-  <h1> Final Step </h1>
+  <h2> We have received your application </h2>
+  <p>
+    One of our technology alliance representatives will be in touch with you within 72 hours. </br> In the meantime, take a few moments to go through our program resources.
+  </p>
+  <div class=video></div>
+
+
+  <a class='module-parent'
+    href="https://www.nutanix.com/elevate/Nutanix%20Elevate%20Program%20Agreement%20Oct%202016.pdf">
+    <div class='module'>
+      <h3> Elevate technology Alliance </h3>
+      <p class='alt'>  Program Guide - PDF document</p>
+    </div></a>
+  <hr>
+
+  <a class='module-parent'
+    href="https://www.nutanix.com/elevate/Nutanix%20Elevate%20Program%20Agreement%20Oct%202016.pdf">
+    <div class='module'>
+      <h3> Nutanix Ready Guide </h3>
+      <p class='alt'> 7 minutes Video</p>
+    </div></a>
+  <hr>
+
+  <a class='module-parent'
+    href="https://www.nutanix.com/elevate/Nutanix%20Elevate%20Program%20Agreement%20Oct%202016.pdf">
+    <div class='module'>
+      <h3> Terms and conditions</h3>
+      <p class='alt'> Pdf document</p>
+    </div></a>
 `
