@@ -2,6 +2,10 @@
 @import '../../_ntnx/variables';
 @import '../../_ntnx/mixins';
 
+html, body{
+  margin: 0;
+padding:0;}
+
 html{
   @include font;
   background-color: $background-color-3;
@@ -12,11 +16,14 @@ html{
 
 body{
   @include size(100%, 100%);
+  min-height: 100vh;
   @include flex(center, center, column);
   background-size: cover;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 40px 0;
 }
+
+
 
 h1{font:$h1}
 h2{font:$h2}

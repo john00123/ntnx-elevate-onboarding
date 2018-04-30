@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 html {
   font: 400 14px/10px "nutanix_soft", san-serif;
   text-rendering: optimizeSpeed;
@@ -13,12 +18,13 @@ body {
   height: 100%;
   width: 100%;
   box-sizing: border-box;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   background-size: cover;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: 40px 0;
 }
 
@@ -142,12 +148,12 @@ input:not([type=checkbox], [type=radio]) {
   font: 400 14px/22px "nutanix_soft", san-serif;
 }
 
-input:focus {
+input:not([type=checkbox], [type=radio]):focus {
   outline: none;
   border-color: #22A5F7;
 }
 
-input::placeholder {
+input:not([type=checkbox], [type=radio])::placeholder {
   color: #7C8D9F;
 }
 
